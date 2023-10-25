@@ -18,6 +18,11 @@ const closeMenu = () => {
   isMenuOpen = false;
 };
 
+document.addEventListener("DOMContentLoaded", function () {
+  closeMenu(); // Close the menu when the document loads
+});
+
+
 navToggle.addEventListener("click", toggleMenu);
 document.addEventListener("DOMContentLoaded", function () {
   const homeLink = document.getElementById("home-link");
