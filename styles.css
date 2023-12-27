@@ -31,6 +31,7 @@
 
 
 body {
+  background-color: #1A1A1A;
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
@@ -100,11 +101,12 @@ img {
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: #fff;
-  box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+  background-color:#333333;
+  box-shadow: 0 1px 4px rgba(182, 182, 183, 0.15);
 }
 
 .nav {
+  background-color: #333333;
   height: var(--header-height);
   display: flex;
   justify-content: space-between;
