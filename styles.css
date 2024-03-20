@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
 :root {
@@ -31,12 +32,11 @@
 
 
 body {
-  background-color: #1A1A1A;
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--second-color);
-    margin: 0; /* Added to remove default margin */
+  margin: 0; /* Added to remove default margin */
   padding: 0; /* Added to remove default padding */
 }
 
@@ -101,12 +101,11 @@ img {
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color:#333333;
-  box-shadow: 0 1px 4px rgba(182, 182, 183, 0.15);
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
 }
 
 .nav {
-  background-color: #333333;
   height: var(--header-height);
   display: flex;
   justify-content: space-between;
@@ -464,5 +463,103 @@ img {
   }
   .home__img {
     width: 450px;
+  }
+}
+
+/* Card Container */
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to the next line */
+  padding: 20px;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Card */
+.card {
+  width: calc(33.33% - 20px); /* Each card takes up a third of the container width */
+  background: linear-gradient(to bottom,#e6f0ff, #bbf7f7); /* Gradient background */
+  border-radius: 10px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Card Image */
+.card__image {
+  width: 90%;
+  height: auto;
+  margin: 20px 0 0 20px;
+  border-radius: 10px;
+}
+
+/* Card Content */
+.card__content {
+  padding: 20px;
+}
+
+/* Card Title */
+.card__title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Card Description */
+.card__description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px; /* Add margin below the description */
+}
+
+/* Card Button */
+.card__button {
+  display: block;
+  background-color: #3498db;
+  color: #fff;
+  padding: 8px 16px; /* Reduced padding */
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  text-align: center; /* Center align text */
+  margin: 0 auto; /* Center align button */
+}
+
+.card__button:hover {
+  background-color: #2783c0; /* Darken the button color on hover */
+}
+
+/* Responsive CSS */
+@media screen and (max-width: 768px) {
+  .card {
+    width: calc(50% - 20px); /* Two cards per row on smaller screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card {
+    width: 100%; /* One card per row on even smaller screens */
+  }
+}
+
+/* Social Media Icons */
+.social-media {
+  display: flex;
+  margin-top: 5px;
+}
+
+.social-media__link {
+  display: inline-block;
+  margin: 0 10px; /* Adjust margin as needed */
+  font-size: 30px; /* Adjust icon size */
+  color: var(--first-color);
+  transition: color 0.3s;
+}
+
+.social-media__link:hover {
+  color: rgb(0, 229, 255); /* Change color on hover */
+}
+
+@media screen and (max-width: 768px) {
+  .social-media {
+    justify-content: center; /* Center align icons */
   }
 }

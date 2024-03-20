@@ -36,7 +36,7 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--second-color);
-    margin: 0; /* Added to remove default margin */
+  margin: 0; /* Added to remove default margin */
   padding: 0; /* Added to remove default padding */
 }
 
@@ -463,5 +463,420 @@ img {
   }
   .home__img {
     width: 450px;
+  }
+}
+
+/* Card Container */
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to the next line */
+  padding: 20px;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Card */
+.card {
+  width: calc(33.33% - 20px); /* Each card takes up a third of the container width */
+  background: linear-gradient(to bottom,#e6f0ff, #bbf7f7); /* Gradient background */
+  border-radius: 10px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Card Image */
+.card__image {
+  width: 90%;
+  height: auto;
+  margin: 20px 0 0 20px;
+  border-radius: 10px;
+}
+
+/* Card Content */
+.card__content {
+  padding: 20px;
+}
+
+/* Card Title */
+.card__title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Card Description */
+.card__description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px; /* Add margin below the description */
+}
+
+/* Card Button */
+.card__button {
+  display: block;
+  background-color: #3498db;
+  color: #fff;
+  padding: 8px 16px; /* Reduced padding */
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  text-align: center; /* Center align text */
+  margin: 0 auto; /* Center align button */
+}
+
+.card__button:hover {
+  background-color: #2783c0; /* Darken the button color on hover */
+}
+
+/* Responsive CSS */
+@media screen and (max-width: 768px) {
+  .card {
+    width: calc(50% - 20px); /* Two cards per row on smaller screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card {
+    width: 100%; /* One card per row on even smaller screens */
+  }
+}
+
+/* Social Media Icons */
+.social-media {
+  display: flex;
+  margin-top: 5px;
+}
+
+.social-media__link {
+  display: inline-block;
+  margin: 0 10px; /* Adjust margin as needed */
+  font-size: 30px; /* Adjust icon size */
+  color: var(--first-color);
+  transition: color 0.3s;
+}
+
+.social-media__link:hover {
+  color: rgb(0, 229, 255); /* Change color on hover */
+}
+
+@media screen and (max-width: 768px) {
+  .social-media {
+    justify-content: center; /* Center align icons */
+  }
+}
+
+/* About Section */
+.about {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.about__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.about__text {
+  text-align: left;
+}
+
+.about__text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.about__text p {
+  margin-bottom: 15px;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+  .about__container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about__img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .about__text {
+    text-align: center;
+  }
+}
+
+/* page */
+/* source : https://uiverse.io/kennyotsu-monochromia/spotty-cheetah-65 */
+.page-container {
+  width: 100%;
+  height: 100%;
+  --color: #E1E1E1;
+  background-color: #F3F3F3;
+  background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
+      linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
+  background-size: 30px 30px;
+}
+
+
+/* i will make loader with react afterwards */
+.about__img {
+  
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.loader {
+  --path: #2f3545;
+  --dot: #5628ee;
+  --duration: 3s;
+  width: 44px;
+  height: 44px;
+  position: relative;
+}
+
+.loader:before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  position: absolute;
+  display: block;
+  background: var(--dot);
+  top: 37px;
+  left: 19px;
+  transform: translate(-18px, -18px);
+  animation: dotRect var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+}
+
+.loader svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.loader svg rect, .loader svg polygon, .loader svg circle {
+  fill: none;
+  stroke: var(--path);
+  stroke-width: 10px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.loader svg polygon {
+  stroke-dasharray: 145 76 145 76;
+  stroke-dashoffset: 0;
+  animation: pathTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+}
+
+.loader svg rect {
+  stroke-dasharray: 192 64 192 64;
+  stroke-dashoffset: 0;
+  animation: pathRect 3s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+}
+
+.loader svg circle {
+  stroke-dasharray: 150 50 150 50;
+  stroke-dashoffset: 75;
+  animation: pathCircle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+}
+
+.loader.triangle {
+  width: 48px;
+}
+
+.loader.triangle:before {
+  left: 21px;
+  transform: translate(-10px, -18px);
+  animation: dotTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+}
+
+@keyframes pathTriangle {
+  33% {
+    stroke-dashoffset: 74;
+  }
+
+  66% {
+    stroke-dashoffset: 147;
+  }
+
+  100% {
+    stroke-dashoffset: 221;
+  }
+}
+
+@keyframes dotTriangle {
+  33% {
+    transform: translate(0, 0);
+  }
+
+  66% {
+    transform: translate(10px, -18px);
+  }
+
+  100% {
+    transform: translate(-10px, -18px);
+  }
+}
+
+@keyframes pathRect {
+  25% {
+    stroke-dashoffset: 64;
+  }
+
+  50% {
+    stroke-dashoffset: 128;
+  }
+
+  75% {
+    stroke-dashoffset: 192;
+  }
+
+  100% {
+    stroke-dashoffset: 256;
+  }
+}
+
+@keyframes dotRect {
+  25% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(18px, -18px);
+  }
+
+  75% {
+    transform: translate(0, -36px);
+  }
+
+  100% {
+    transform: translate(-18px, -18px);
+  }
+}
+
+@keyframes pathCircle {
+  25% {
+    stroke-dashoffset: 125;
+  }
+
+  50% {
+    stroke-dashoffset: 175;
+  }
+
+  75% {
+    stroke-dashoffset: 225;
+  }
+
+  100% {
+    stroke-dashoffset: 275;
+  }
+}
+
+.loader {
+  display: inline-block;
+  margin: 0 16px;
+}
+
+ 
+.main-box {
+  background-color: white;
+  padding: 1em;
+  padding-bottom: 1.1em;
+  border-radius: 15px;
+  margin: 1em;
+}
+
+.loading-box {
+  display: flex;
+  flex-direction: row;
+  height: 4em;
+  padding-left: 1em;
+  padding-right: 1em;
+  transform: rotate(180deg);
+  justify-content: right;
+  border-radius: 10px;
+  transition: .4s ease-in-out;
+}
+
+.loading-box:hover {
+  cursor: pointer;
+  background-color: lightgray;
+}
+
+.currentplaying-box {
+  display: flex;
+  margin: 1em;
+}
+
+
+.heading-text {
+  color: black;
+  font-size: 1.1em;
+  font-weight: bold;
+  align-self: center;
+}
+
+.loading-container {
+  display: flex;
+  margin-top: 1em;
+  margin-left: 0.3em;
+}
+
+.loading-line {
+  width: 2px;
+  height: 33px;
+  background-color: limegreen;
+  animation: 1s move6 infinite;
+  border-radius: 5px;
+  margin: 0.1em;
+}
+
+.loading-line:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.loading-line:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.loading-line:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+
+.song-container {
+  position: relative;
+  transform: rotate(180deg);
+  margin-right: 1em;
+  color: black;
+  align-self: center;
+}
+
+.artist-name {
+  font-size: 0.6em;
+}
+
+@keyframes move6 {
+  0% {
+    height: 0.2em;
+  }
+
+  25% {
+    height: 0.7em;
+  }
+
+  50% {
+    height: 1.5em;
+  }
+
+  100% {
+    height: 0.2em;
   }
 }
